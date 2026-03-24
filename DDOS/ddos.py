@@ -37,12 +37,12 @@ clearScr()
 
 class choices():
     def ddos(self):
-        if system() == 'Linux':
+        # Try Linux branch first
+        try:
             os.system("cd files/ddos && chmod +x ddos.py && python3 ddos.py")
-        elif system() == 'Windows':
+        except:
+            # Fallback to Windows branch
             os.system('cd files\\ddos && python ddos.py')
-        else:
-            print("Unsupported OS!")
     
     def exitluc(self):
         print('\033[97m\nClosing Lucille\nPlease Wait...\033[1;m')
